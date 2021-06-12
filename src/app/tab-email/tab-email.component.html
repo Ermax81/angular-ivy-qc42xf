@@ -1,0 +1,41 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef> Status </th>
+    <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="creation_date">
+    <th mat-header-cell *matHeaderCellDef> Creation </th>
+    <td mat-cell *matCellDef="let element"> {{element.creation_date}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="address">
+    <th mat-header-cell *matHeaderCellDef> Adresse </th>
+    <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef> Type </th>
+    <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="last_connexion">
+    <th mat-header-cell *matHeaderCellDef> Derniere connexion </th>
+    <td mat-cell *matCellDef="let element"> {{element.last_connexion}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="localisation">
+    <th mat-header-cell *matHeaderCellDef> Localisation </th>
+    <td mat-cell *matCellDef="let element"> {{element.localisation}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="pwned">
+    <th mat-header-cell *matHeaderCellDef> Pirat&eacute; </th>
+    <td mat-cell *matCellDef="let element"><span *ngIf="element.pwned">OUI</span><span *ngIf="!element.pwned">NON</span>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
